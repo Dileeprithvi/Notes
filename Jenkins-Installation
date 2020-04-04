@@ -1,0 +1,23 @@
+Java Installation
+
+yum install java-1.8*
+java -version
+find /usr/lib/jvm/java-1.8* | head -n 3
+/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64
+
+cd ~
+vi .bash_profile
+JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64
+
+
+Jenkins Installation
+
+yum -y install wget
+wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+yum -y install jenkins
+
+systemctl start jenkins
+systemctl enable jenkins
+
+
